@@ -24,14 +24,5 @@
           default = package;
         }
       );
-
-      nixosModules =
-        let
-          module = ./nixos-module;
-        in
-        {
-          http-proxy-with-credential-manager = module;
-          default = module;
-        };
     };
 }
