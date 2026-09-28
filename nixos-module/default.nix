@@ -6,16 +6,16 @@
 }:
 
 let
-  cfg = config.services.proxy-with-credential-manager;
+  cfg = config.services.http-proxy-with-credential-manager;
 in
 {
-  options.services.proxy-with-credential-manager = {
-    enable = lib.mkEnableOption "ProxyWithCredentialManager";
+  options.services.http-proxy-with-credential-manager = {
+    enable = lib.mkEnableOption "HttpProxyWithCredentialManager";
 
     package = lib.mkOption {
       type = lib.types.package;
       default = pkgs.callPackage ../package { };
-      description = "The ProxyWithCredentialManager package to use.";
+      description = "The HttpProxyWithCredentialManager package to use.";
     };
 
     proxyPort = lib.mkOption {
@@ -30,14 +30,14 @@ in
 
     stateDirectory = lib.mkOption {
       type = lib.types.str;
-      default = "proxy-with-credential-manager";
+      default = "http-proxy-with-credential-manager";
       description = "systemd `StateDirectory` (under `/var/lib`) where the credential database is stored.";
     };
   };
 
   config = lib.mkIf cfg.enable {
-    systemd.services.proxy-with-credential-manager = {
-      description = "ProxyWithCredentialManager";
+    systemd.services.http-proxy-with-credential-manager = {
+      description = "HttpProxyWithCredentialManager";
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
       serviceConfig = {
