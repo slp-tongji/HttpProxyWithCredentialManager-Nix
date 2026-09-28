@@ -6,17 +6,17 @@
 }:
 
 buildDotnetModule (finalAttrs: {
-  pname = "proxy-with-credential-manager";
-  version = "0.0.3";
+  pname = "http-proxy-with-credential-manager";
+  version = "0.0.4";
 
   src = fetchFromGitHub {
     owner = "slp-tongji";
-    repo = "ProxyWithCredentialManager";
+    repo = "HttpProxyWithCredentialManager";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-EQvJpGmzpS1KJUvYbHZ65jDK5z8rInncBofaXH0cSgQ=";
+    hash = "sha256-taql5qTqWFpyqDgXTg9YqiB3FcM+CWZ1Jbfvtqbo76Q=";
   };
 
-  projectFile = "src/ProxyWithCredentialManager/ProxyWithCredentialManager.csproj";
+  projectFile = "src/HttpProxyWithCredentialManager/HttpProxyWithCredentialManager.csproj";
   dotnet-sdk = dotnetCorePackages.sdk_10_0;
   dotnet-runtime = dotnetCorePackages.aspnetcore_10_0;
 
@@ -26,10 +26,10 @@ buildDotnetModule (finalAttrs: {
   __structuredAttrs = true;
 
   meta = {
-    description = "A proxy server with a credential manager API for creating, querying and revoking proxy credentials.";
-    homepage = "https://github.com/slp-tongji/ProxyWithCredentialManager";
+    description = "An HTTP proxy server with a credential manager API for creating, querying and revoking proxy credentials.";
+    homepage = "https://github.com/slp-tongji/HttpProxyWithCredentialManager";
     license = lib.licenses.mit;
-    mainProgram = "ProxyWithCredentialManager";
+    mainProgram = "HttpProxyWithCredentialManager";
     maintainers = [ ];
   };
 })

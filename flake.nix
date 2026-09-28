@@ -1,5 +1,5 @@
 {
-  description = "Nix packaging for ProxyWithCredentialManager";
+  description = "Nix packaging for HttpProxyWithCredentialManager";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -20,18 +20,9 @@
           package = nixpkgs.legacyPackages.${system}.callPackage ./package { };
         in
         {
-          proxy-with-credential-manager = package;
+          http-proxy-with-credential-manager = package;
           default = package;
         }
       );
-
-      nixosModules =
-        let
-          module = ./nixos-module;
-        in
-        {
-          proxy-with-credential-manager = module;
-          default = module;
-        };
     };
 }

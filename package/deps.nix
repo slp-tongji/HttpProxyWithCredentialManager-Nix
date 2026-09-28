@@ -17,13 +17,13 @@
   })
   (fetchNuGet {
     pname = "Titanium.Web.Proxy";
-    version = "7.0.11";
-    sha256 = "9/mXqXcLPBx1NssdG06lHVcRBIMrZ6yYTfNNz92/0/I=";
+    version = "7.0.13-beta";
+    sha256 = "hxFq/dFEaOEk+8m8P2lDdNbClpEqqxEtu+80ebtRayg=";
   })
   (fetchNuGet {
     pname = "Titanium.Web.Proxy.Abstractions";
-    version = "7.0.11";
-    sha256 = "8hqnKUL6vxOSYUfX5clbZhWv/iUYGFPiu4FsAmL5Ysk=";
+    version = "7.0.13-beta";
+    sha256 = "kazgAb26pdmVTZ/4eCqBYcY+h6t4CBSgWzaEPSkY53E=";
   })
   (fetchNuGet {
     pname = "Tjslp.CredentialManager.Protocol";
